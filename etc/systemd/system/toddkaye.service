@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve myproject
+After=network.target
+
+[Service]
+User=tkuster
+Group=www-data
+WorkingDirectory=/var/www/toddkaye.com/flask
+Environment="PATH=/home/tkuster/.pyenv/versions/web/bin"
+ExecStart=/home/tkuster/.pyenv/versions/web/bin/gunicorn --workers 3 --bind unix:toddkaye.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

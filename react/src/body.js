@@ -1,8 +1,10 @@
 
 import React from 'react';
 import axios from 'axios';
-import ReactMarkdown from 'react-markdown'
+//import ReactMarkdown from 'react-markdown'
 import './index.css';
+
+import { Textile } from './textile-render.js';
 
 export class Content extends React.Component {
   render() {
@@ -26,7 +28,8 @@ export class Blurb extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      content: ""
+      content: "",
+
     };
   }
 
@@ -47,7 +50,7 @@ export class Blurb extends React.Component {
   render() {
     return (
         <div>
-          <ReactMarkdown source={this.state.content} />
+          <Textile source={this.state.content} />
         </div>
     );
   }

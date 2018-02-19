@@ -4,9 +4,33 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import axios from 'axios';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
+
 import './index.css';
 
 import { Content } from './body.js';
+
+var textile = require('textile-js');
+console.log(textile("h1. foo"))
+
+
+class SiteRoute extends React.Component {
+  render() {
+    return (
+      <div>
+        <Route exact path='/' Component={Page}/>
+        <Route exact path='/home' Component={Page}/>
+      </div>
+    );
+  }
+}
+
 
 class Page extends React.Component {
   render() {
