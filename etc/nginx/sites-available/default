@@ -44,6 +44,14 @@ server {
         proxy_pass http://unix:/var/www/toddkaye.com/flask/toddkaye.sock;
     }
 
+    location /edit/ {
+		try_files $uri $uri/ =404;
+        auth_basic "Restricted Content";
+        auth_basic_user_file /var/www/toddkaye.com/flask/.htpasswd;
+    }
+
+
+
 	location / {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
