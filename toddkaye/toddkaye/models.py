@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 from sqlalchemy import Column, Integer, String, DateTime, BLOB
 from sqlalchemy.orm import sessionmaker
-import config
+import toddkaye.config as config
 Session = sessionmaker()
 
 engine = create_engine(f'mysql+pymysql://{config.USERNAME}:{config.PASSWORD}@{config.HOST}:{config.PORT}/{config.SCHEMA}', 
