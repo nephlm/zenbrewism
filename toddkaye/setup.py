@@ -10,7 +10,7 @@ setup(
 		'Flask==0.12.2',
 		'PyMySQL==0.8.0',
 		'flask-htpasswd==0.3.1',
-		'SQLAlchemy==1.2.4',
+		'SQLAlchemy==1.3.0',
     ],
 )
 
